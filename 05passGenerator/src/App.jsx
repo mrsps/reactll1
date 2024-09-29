@@ -12,12 +12,13 @@ function App() {
     let str="QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm"
     if(isNumber)  str+="1234567890"
     if(issplc)  str+="@#$%!&*{?_-"
-    for (let i = 0; i <=length; i++) {
+    for (let i = 0; i <length; i++) {
       let char= Math.floor(Math.random()*str.length+1)
       p+=str.charAt(char)
     }
     setPass(p)
-  },[length,isNumber,issplc,setPass])
+    console.log(p)
+  },[isNumber,length,issplc, setPass])
 
   const copyPass=useCallback(()=>{
     passref.current?.select()
@@ -25,7 +26,7 @@ function App() {
   },[pass])
 
   useEffect(()=>{passGenerator()},
-  [length,isNumber,issplc,passGenerator])
+  [isNumber,length,issplc,setPass])
 
   return (
     <>
