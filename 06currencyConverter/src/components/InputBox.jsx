@@ -3,7 +3,7 @@ import React, {useId} from 'react'
 function InputBox(
     {
         label,
-        amount='',
+        amount,
         onAmountChange,
         currencyOptions=[],
         onCurrencyChange,
@@ -29,7 +29,10 @@ function InputBox(
         type='number'
         disabled={amountDisable}
         value={amount}
-        onChange={(e)=>{onAmountChange && onAmountChange(Number(e.target.value)) }}
+       onChange={(e)=>{onAmountChange && 
+        onAmountChange(Number(e.target.value))
+       }}
+        
         />
         </div>
         <div className="w-1/2 flex flex-wrap  justify-end text-right">

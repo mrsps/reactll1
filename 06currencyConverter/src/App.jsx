@@ -6,7 +6,7 @@ import photo from './img/photo.jpg';
 
 
 function App() {
-  let [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState(0)
   let [from,setFrom] = useState("usd")
   let [to,setTo] = useState("inr")
   let [convertedAmount,setConvertedAmount] = useState(0)
@@ -45,12 +45,8 @@ function App() {
             currencyOptions={options}
             onCurrencyChange={(currency)=>{setFrom(currency)}}
             selectCurrency={from}
-            onAmountChange={(amount)=>setAmount(amount)}
-
-            
-        
+            onAmountChange={(a)=>setAmount(a)}
             />
-
           </div>
           <div className="relative-w-full h-0.5">
             <button
